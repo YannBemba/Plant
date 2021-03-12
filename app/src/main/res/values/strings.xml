@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">Plant</string>
+
+    <!-- PAGE D'ACCUEIL -->
+    <string name="home_page_title">A découvrir</string>
+    <string name="home_page_last_plant_section">Dernières plantes</string>
+
+    <!-- PAGE DE COLLECTION -->
+    <string name="collection_page_title">Ma collection</string>
+
+    <!-- PAGE D'AJOUT DE PLANTE -->
+    <string name="add_plant_page_title">Ajout d\'une plante</string>
+    <string name="add_plant_page_upload_button">Charger Image</string>
+    <string name="add_plant_page_name_input">@string/item_plant_name</string>
+    <string name="add_plant_page_decription_input">@string/item_plant_description</string>
+
+    <string-array name="add_plant_page_grow_spinner_input">
+        <item>Croissance : Lente</item>
+        <item>Croissance : Moyenne</item>
+        <item>Croissance : Rapide</item>
+    </string-array>
+
+    <string-array name="add_plant_page_water_spinner_input">
+        <item>Consommation : Faible</item>
+        <item>Consommation : Moyenne</item>
+        <item>Consommation : Elevée</item>
+    </string-array>
+
+    <string name="add_plant_page_confirm_button">Confirmer</string>
+
+    <!-- Fenêtre Popup de details -->
+    <string name="popup_plant_name">Plant name</string>
+    <string name="popup_plant_description_title">Description</string>
+    <string name="popup_plant_description_subtitle">Petite description</string>
+    <string name="popup_plant_grow_title">Croissance</string>
+    <string name="popup_plant_grow_subtitle">Lente</string>
+    <string name="popup_plant_water_title">Consommation Eau</string>
+    <string name="popup_plant_water_subtitle">Faible</string>
+
+
+    <!-- PLANTE CUSTOMISEE -->
+    <string name="item_plant_name">Nom de la plante</string>
+    <string name="item_plant_description">Description de la plante</string>
+
+    
 </resources>
