@@ -10,12 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.plant.MainActivity
 import com.example.plant.PlantModel
+import com.example.plant.PlantRepository
 import com.example.plant.R
 
 class PlantAdapter(
-        private val context: MainActivity,
-        private val plantList: List<PlantModel>,
-        private val layoutId: Int): RecyclerView.Adapter<PlantAdapter.ViewHolder>() {
+    private val context: MainActivity,
+    private val plantList: List<PlantModel>,
+    private val layoutId: Int): RecyclerView.Adapter<PlantAdapter.ViewHolder>() {
 
     class ViewHolder(view: View)
         : RecyclerView.ViewHolder(view){
@@ -28,8 +29,8 @@ class PlantAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
-                .from(parent.context)
-                .inflate(layoutId, parent, false)
+            .from(parent.context)
+            .inflate(layoutId, parent, false)
 
         return ViewHolder(view)
     }
@@ -38,13 +39,16 @@ class PlantAdapter(
         // Récupérer les informations de la plante
         val currentPlant = plantList[position]
 
+        // récupérer le repository
+        val repo = PlantRepository()
+
         holder.plantName?.text = currentPlant.name
         holder.plantDesc?.text = currentPlant.description
 
         // Récupérer les images avec Glide
         Glide.with(context)
-                .load(Uri.parse(currentPlant.imageUrl))
-                .into(holder.plantImage)
+            .load(Uri.parse(currentPlant.imageUrl))
+            .into(holder.plantImage)
 
         // Vérifier si la plante a été liké
 
@@ -52,6 +56,15 @@ class PlantAdapter(
             holder.starIcon.setImageResource(R.drawable.ic_star)
         } else {
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
+
+        }
+
+        // rajouter une interaction sur cette étoile
+        holder.starIcon.setOnClickListener {
+            // inverser si le bouton est like ou non
+            currentPlant.liked = !currentPlant.liked
+            // mettre à jour l'objet plante
+            repo.updatePlant(currentPlant)
 
         }
 
