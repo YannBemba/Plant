@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Plant">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" android:configChanges="orientation"
+                <action android:name="android.intent.action.MAIN"
                     android:screenOrientation="portrait" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
