@@ -56,7 +56,6 @@ class PlantAdapter(
             holder.starIcon.setImageResource(R.drawable.ic_star)
         } else {
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
-
         }
 
         // rajouter une interaction sur cette étoile
@@ -65,7 +64,6 @@ class PlantAdapter(
             currentPlant.liked = !currentPlant.liked
             // mettre à jour l'objet plante
             repo.updatePlant(currentPlant)
-
         }
 
     }
