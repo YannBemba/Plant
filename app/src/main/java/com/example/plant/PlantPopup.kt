@@ -47,7 +47,6 @@ class PlantPopup(
             repo.updatePlant(currentPlant)
 
             updateStar(starButton)
-
         }
     }
 
