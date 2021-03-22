@@ -29,7 +29,7 @@ class HomeFragment(
         // Récupérer le recyclerView
 
         val horizontalRecyclerView = binding.horizontalRecyclerview
-        horizontalRecyclerView.adapter = PlantAdapter(context, plantList, R.layout.item_horizontal_plant)
+        horizontalRecyclerView.adapter = PlantAdapter(context, plantList.filter { !it.liked }, R.layout.item_horizontal_plant)
 
         // Récupérer le second recyclerView
 
