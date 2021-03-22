@@ -12,6 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
         <!-- Customize your theme here. -->
+
+        <!-- Customiser les spinners -->
+
+        <item name="android:spinnerItemStyle">@style/DefautTextStyle</item>
+        <item name="spinnerDropDownItemStyle">@style/DefautTextStyle</item>
+
     </style>
 
     <!-- Créer le composant titre par défaut. -->
