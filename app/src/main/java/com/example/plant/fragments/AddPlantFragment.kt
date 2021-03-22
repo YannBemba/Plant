@@ -17,7 +17,7 @@ import com.example.plant.databinding.FragmentAddPlantBinding
 import java.util.*
 
 class AddPlantFragment(
-        private val context: MainActivity
+    private val context: MainActivity
 ): Fragment() {
 
     private var _binding: FragmentAddPlantBinding? = null
@@ -27,9 +27,9 @@ class AddPlantFragment(
     private var file: Uri? = null
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?)
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?)
             : View {
         _binding = FragmentAddPlantBinding.inflate(layoutInflater)
 
@@ -38,7 +38,7 @@ class AddPlantFragment(
 
         // récupérer le bouton pour charger l'image
 
-        val pickupImageButton = binding.confirmButton
+        val pickupImageButton = binding.uploadButton
         //lorsqu'on clique dessus ça ouvre les images du téléphone
 
         pickupImageButton.setOnClickListener {
@@ -67,12 +67,12 @@ class AddPlantFragment(
 
             // créer un nouvel objet PlantModel
             val plant = PlantModel(
-                    UUID.randomUUID().toString(),
-                    plantName,
-                    plantDesc,
-                    downloadImageUrl.toString(),
-                    grow,
-                    water
+                UUID.randomUUID().toString(),
+                plantName,
+                plantDesc,
+                downloadImageUrl.toString(),
+                grow,
+                water
             )
 
             // envoyer en db
@@ -88,8 +88,8 @@ class AddPlantFragment(
         intent.type = "image/"
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(
-                Intent.createChooser(intent, "Select Picture"),
-                23
+            Intent.createChooser(intent, "Select Picture"),
+            23
         )
     }
 
