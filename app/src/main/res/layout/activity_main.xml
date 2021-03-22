@@ -19,7 +19,7 @@
         style="@style/DefautTextStyle"/>
 
     <TextView
-        android:id="@+id/page_tite"
+        android:id="@+id/page_title"
         style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
